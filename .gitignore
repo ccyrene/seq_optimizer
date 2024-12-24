@@ -1,2 +1,4 @@
 /target
 tests/testing
+seq_optimizer/__pycache__
+seq_optimizer/*.so
