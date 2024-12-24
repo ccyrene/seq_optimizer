@@ -1,0 +1,12 @@
+[package]
+name = "seq_optimizer"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82.0"
+
+[lib]
+name = "_seq_optimizer"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23.3", default-features = false, features = ["extension-module", "macros"] }
