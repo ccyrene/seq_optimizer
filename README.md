@@ -9,22 +9,30 @@ This repository is dedicated to optimizing the handling of sequences, particular
 
 ## Installation
 ```bash
-    $pip install seq_optimizer
+$pip install seq_optimizer
 ```
 
 ## Usage
 ```python
-    import seq_optimizer
+import seq_optimizer
 
-    sequences = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+sequences = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
 
-    longest_sequence = seq_optimizer.longest_common(sequences)
+longest_sequence = seq_optimizer.longest_common(sequences)
 
-    print(f"longest sequence: {longest_sequence}")
+print(f"longest sequence: {longest_sequence}") #expected [1, 2, 3, 4, 5]
 ```
 
 ## Performance Comparison
-Provide benchmarks and comparisons between Hugging Face's implementation and this optimized Rust version to showcase the speedup.
+
+### Token-Level Performance
+![Performance Chart](https://raw.githubusercontent.com/esylenn/seq_optimizer/main/perf_thread.svg)
+This chart illustrates the performance of the optimized implementation on a total of 10 million tokens, where each sub-sequence contains 100,000 tokens, overlapping with 10 elements. The results showcase a significant speedup, making this approach highly efficient for large-scale sequence processing.
+
+### Scaling with Total Tokens
+![Scaling Performance](https://raw.githubusercontent.com/esylenn/seq_optimizer/main/perf_token.svg)
+This chart evaluates the performance as the total number of tokens varies from 1,000 to 10 million. Each sub-sequence contains 10% of the total tokens, with 10 overlapping elements per sub-sequence. The optimized implementation demonstrates consistent scalability and improved efficiency across all token ranges.
+
 
 ## License
 [MIT](./LICENSE)
