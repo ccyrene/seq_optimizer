@@ -3,6 +3,7 @@
 tests/testing
 seq_optimizer/*.so
 
+Dockerfile
 *.txt
 *.egg-info
 **/__pycache__
